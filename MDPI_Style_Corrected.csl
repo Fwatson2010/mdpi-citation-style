@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>MDPI Custom Style</title>
+    <id>http://www.zotero.org/styles/mdpi-custom-style</id>
+    <link href="http://www.zotero.org/styles/mdpi-custom-style" rel="self"/>
+    <author>
+      <name>Fernando Watson (adapted by ChatGPT)</name>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="generic-base"/>
+    <updated>2025-07-22T00:00:00+00:00</updated>
+    <summary>A custom CSL style for MDPI journals with numeric citation and full references including DOI.</summary>
+    <language>en-US</language>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name initialize-with="." delimiter=", " delimiter-precedes-last="never"/>
+    </names>
+  </macro>
+
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+
+  <macro name="journal">
+    <text variable="container-title" font-style="italic"/>
+  </macro>
+
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="volume">
+    <text variable="volume" font-style="italic"/>
+  </macro>
+
+  <macro name="pages">
+    <text variable="page"/>
+  </macro>
+
+  <macro name="doi">
+    <group prefix=" " suffix=".">
+      <text value="https://doi.org/"/>
+      <text variable="DOI"/>
+    </group>
+  </macro>
+
+  <citation collapse="citation-number">
+    <layout prefix="[" suffix="]" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography et-al-min="7" et-al-use-first="6" second-field-align="flush">
+    <layout>
+      <text variable="citation-number" suffix=". "/>
+      <group delimiter=". ">
+        <text macro="author"/>
+        <text macro="title"/>
+        <text macro="journal"/>
+        <group delimiter=", ">
+          <text macro="year"/>
+          <text macro="volume"/>
+          <text macro="pages"/>
+        </group>
+        <text macro="doi"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
