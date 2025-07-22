@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <!-- This style was edited with the Visual CSL Editor (https://editor.citationstyles.org/visualEditor/) -->
+  <info>
+    <title>MDPI-Compatible Numerical Style</title>
+    <id>http://www.zotero.org/styles/mdpi-compatible-numerical-style</id>
+    <link href="http://www.zotero.org/styles/mdpi-compatible-numerical-style" rel="self"/>
+    <author>
+      <name>ChatGPT Adaptation</name>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="science"/>
+    <summary>Numerical citation style compatible with MDPI guidelines, includes DOI and proper formatting for Mendeley.</summary>
+    <updated>2025-07-22T17:30:23+00:00</updated>
+    <language>en-US</language>
+  </info>
+  <macro name="author">
+    <names variable="author">
+      <name initialize-with="." name-as-sort-order="first" delimiter=", " delimiter-precedes-last="never"/>
+      <label form="short" prefix=", " suffix="."/>
+    </names>
+  </macro>
+  <macro name="editor">
+    <names variable="editor">
+      <name initialize-with="." name-as-sort-order="first" delimiter=", "/>
+      <label form="short" prefix=", " suffix="."/>
+    </names>
+  </macro>
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+  <macro name="container-title">
+    <text variable="container-title" font-style="italic"/>
+  </macro>
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <macro name="volume">
+    <text variable="volume" font-style="italic"/>
+  </macro>
+  <macro name="pages">
+    <text variable="page"/>
+  </macro>
+  <macro name="publisher">
+    <group delimiter=", ">
+      <text variable="publisher"/>
+      <text variable="publisher-place"/>
+    </group>
+  </macro>
+  <macro name="doi">
+    <group prefix=" " suffix=".">
+      <text value="https://doi.org/"/>
+      <text variable="DOI"/>
+    </group>
+  </macro>
+  <citation collapse="citation-number">
+    <layout prefix="[" suffix="]" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography et-al-min="7" et-al-use-first="6" second-field-align="flush">
+    <layout>
+      <text variable="citation-number" suffix=". "/>
+      <group delimiter=". ">
+        <text macro="author"/>
+        <text macro="title"/>
+        <text macro="container-title"/>
+        <group delimiter=", ">
+          <text macro="issued"/>
+          <text macro="volume"/>
+          <text macro="pages"/>
+        </group>
+        <text macro="doi"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
